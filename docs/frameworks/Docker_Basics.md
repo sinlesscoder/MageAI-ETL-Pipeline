@@ -70,3 +70,11 @@ docker exec -it container_name
 - `--restart` : Policy in the event that your server crashes, the container will automatically restart
   - `on-failure`
   - `always`
+
+#### Monitoring Containers
+
+- Gives you a list of all the containers that are currently up and running.
+
+```bash
+docker ps
+```
