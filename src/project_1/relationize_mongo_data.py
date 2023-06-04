@@ -1,0 +1,62 @@
+import ast
+import pandas as pd
+from load_mongodb import retrieve_mongo_connection
+
+# Retrieve data from MongoDB Collection
+iphone_col = retrieve_mongo_connection('iphone')
+
+# Use .find() on the collection
+docs = list(iphone_col.find())
+
+doc = docs[0]
+
+# print(doc)
+
+# # Keys of the document
+# print(doc.keys())
+
+# print(doc['updated_at'])
+
+# Page 1 Results
+page_1_results = doc['1']['result']
+print(type(page_1_results))
+
+# Look at page 1's keys
+print(page_1_results.keys())
+
+# What's in status?
+status_df = pd.DataFrame(page_1_results['status'], index=[0])
+print(status_df)
+
+# Result List
+r_list = page_1_results['resultList']
+print(type(r_list))
+print(len(r_list))
+print(type(r_list[0]))
+print(r_list[0].keys())
+
+# Item vs Delivery
+sample_result = r_list[0]
+
+## Item Key
+sample_result_df = pd.DataFrame(sample_result['item'], index=[0])
+
+sample_result_df['sku'].fillna(str(sample_result['item']['sku']), inplace=True)
+
+print(sample_result_df.columns)
+
+print(sample_result_df[['sku', 'title', 'image']].head())
+
+print(sample_result_df['sku'].dtype)
+
+# Test to see if the column will be a dictionary or null
+sample_result_df['sku'] = sample_result_df['sku'].apply(lambda x: ast.literal_eval(x))
+
+# print(sample_result_df['sku'].iloc[0]['def']['prices'])
+
+# JSON Normalize
+sku_df = pd.json_normalize(sample_result_df['sku'])
+
+sku_df['price_comparison'] = sku_df['def.prices.pc'].equals(sku_df['def.prices.app'])
+
+print(sku_df)
