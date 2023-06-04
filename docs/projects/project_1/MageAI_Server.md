@@ -14,5 +14,6 @@ docker run --name ali_project_1_mageai \
            -e REQUIRE_USER_AUTHENTICATION=1 \
            -v $(pwd):/home/src \
            -p 8371:6789 \
-           -itd mageai/mageai:latest
+           -itd mageai/mageai:latest \
+           mage start aliexpress_sku_analysis
 ```
