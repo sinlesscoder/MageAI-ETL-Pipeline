@@ -28,3 +28,25 @@
 - Apply a pandas operation to group up the DataFrames together into a single DataFrame since they'll have the same columns.
 
 - Export the finalized table to PostgreSQL.
+
+### MageAI Blueprint
+
+- Pipeline Name: `aliexpress_cdm`
+
+#### Blocks
+
+- Data Loader
+
+  - `retrieve_mongo_collection_names`
+    - Get the names of the search terms that contain results.
+    - Return a list of those names
+
+- Data Transformer
+
+  - `common_data_model`
+    - Retrieve the actual data from the Mongo collection based on input search terms.
+    - Create a single DataFrame that consolidates the normalized results of each term's page results.
+
+- Data Exporter
+  - `load_cdm_postgres`
+    - Load the DataFrame from previous block into a PostgreSQL table.

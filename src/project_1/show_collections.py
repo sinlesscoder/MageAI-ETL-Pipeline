@@ -7,4 +7,7 @@ client = MongoClient(uri)
 db = client['aliexpress_items']
 
 # See all the collections
-db.
+results = db.list_collection_names()
+
+print(type(results))
+print(type(db.list_collection_names()))

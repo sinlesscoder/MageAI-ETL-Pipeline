@@ -1,0 +1,11 @@
+blocks: []
+callbacks: []
+data_integration: null
+description: null
+executor_count: 1
+extensions: {}
+name: aliexpress_cdm
+type: python
+updated_at: null
+uuid: aliexpress_cdm
+widgets: []

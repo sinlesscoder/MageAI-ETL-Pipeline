@@ -1,23 +1,39 @@
 import pandas as pd
 from load_mongodb import retrieve_mongo_connection
 
-# Retrieve data from MongoDB Collection
-iphone_col = retrieve_mongo_connection('iphone')
+# Search result term
+search_terms = ['samsung_galaxy_s22', 'iphone']
 
-# Use .find() on the collection
-docs = list(iphone_col.find())
+def common_data_model(search_terms: list):
+    frames = []
 
-doc = docs[0]
+    for term in search_terms:
+        # Retrieve data from MongoDB Collection
+        term_col = retrieve_mongo_connection(term)
 
-page_numbers = [str(i) for i in range(1, 3)]
+        # Use .find() on the collection
+        docs = list(term_col.find())
 
-print(page_numbers)
+        doc = docs[0]
 
-# First Page
-page_one = doc[page_numbers[0]]
+        page_numbers = [str(i) for i in range(1, 3)]
 
-page_one_results = page_one['result']['resultList']
+        # Run in a loop
+        for num in page_numbers:
+            if 'result' in doc[num].keys():
+                results = doc[num]['result']['resultList']
+                df = pd.json_normalize(results)
+                df['page_number'] = num
+                df['search_term'] = term
+                frames.append(df)
+            else:
+                print("Your quota exceeded. Cannot make dataframe.")
 
-page_one_df = pd.json_normalize(page_one_results)
+    # Concatenate the final DataFrame
+    final_df = pd.concat(frames)
 
-print(page_one_df.info())
+    return final_df
+
+result = common_data_model(search_terms)
+
+print(result.tail())
