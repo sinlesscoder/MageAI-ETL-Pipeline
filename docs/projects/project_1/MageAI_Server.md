@@ -6,6 +6,7 @@
 - Port: `8371`
 - Email: `admin@admin.com`
 - Password: `admin`
+- [Link](http://104.225.217.176:8371)
 
 ### Docker Command
 
