@@ -1,0 +1,12 @@
+blocks: []
+callbacks: []
+data_integration: null
+description: Pipeline to generate a common data model that exports to PostgreSQL for
+  all search terms and page numbers from aliexpress item data.
+executor_count: 1
+extensions: {}
+name: aliexpress_cdm
+type: python
+updated_at: null
+uuid: aliexpress_cdm
+widgets: []

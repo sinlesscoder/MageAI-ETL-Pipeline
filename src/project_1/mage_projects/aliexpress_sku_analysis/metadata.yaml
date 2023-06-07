@@ -19,9 +19,11 @@ emr_config:
 
 notification_config:
   alert_on:
-    - trigger_failure
-    - trigger_passed_sla
+  - trigger_failure
+  - trigger_passed_sla
   slack_config:
     webhook_url: "{{ env_var('MAGE_SLACK_WEBHOOK_URL') }}"
   teams_config:
     webhook_url: "{{ env_var('MAGE_TEAMS_WEBHOOK_URL') }}"
+project_uuid: 184d4c834fcd45539d43ca5bea51fd97
+help_improve_mage: true
