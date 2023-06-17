@@ -10,4 +10,4 @@ db = client['aliexpress_items']
 results = db.list_collection_names()
 
 print(type(results))
-print(type(db.list_collection_names()))
+print(db.list_collection_names())
