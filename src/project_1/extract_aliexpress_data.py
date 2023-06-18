@@ -42,4 +42,3 @@ def retrieve_item_pages(search_query: str):
         page_results.append(result)
     
     return page_results
-
