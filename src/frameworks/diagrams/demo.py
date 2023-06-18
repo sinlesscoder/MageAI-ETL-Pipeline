@@ -6,6 +6,14 @@ from os import getcwd
 # Create a path to the diagrams folder
 diagram_path = getcwd() + "/docs/frameworks/diagrams"
 
+#Node 1 : AliExpress Api Call
+#aliexpress_api_call = Node("AliExpress Api Call")
+
+# Node 2 : Senior Engineer
+#export_api_results_mongodb = Node("Export API Results MongoDB")
+
+# Node 3: MongoDB
+#mongoDB = Node("MongoDB")
 with Diagram(filename=f'{diagram_path}/employee_hierarchy', outformat="pdf", direction='LR', node_attr={'fontsize': '12', 'color': 'gold'},
              edge_attr={'labeldistance': '0.7'}, graph_attr={'bgcolor': 'skyblue'}, show = False):
 
@@ -35,14 +43,7 @@ with Diagram(filename=f'{diagram_path}/employee_hierarchy', outformat="pdf", dir
     mongoDB_1 = Custom('MongoDB', icon_path=f'{custom_path}/mongoDB.png')
 
 
-    #Node 1 : AliExpress Api Call
-    aliexpress_api_call = Node("AliExpress Api Call")
 
-    # Node 2 : Senior Engineer
-    export_api_results_mongodb = Node("Export API Results MongoDB")
-
-    # Node 3: MongoDB
-    #mongoDB = Node("MongoDB")
 
     # Edge 1
     edge_one = Edge(label='Data Loader', color='silver', style='dashed')
