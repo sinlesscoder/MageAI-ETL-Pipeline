@@ -2,7 +2,10 @@ import pandas as pd
 from load_mongodb import retrieve_mongo_connection
 
 # Search result term
-search_terms = ['samsung_galaxy_s22', 'iphone']
+#search_terms = ['samsung_galaxy_s22', 'iphone']
+
+search_terms = ['Nintendo Switch', 'PS5']
+
 
 def common_data_model(search_terms: list):
     frames = []
