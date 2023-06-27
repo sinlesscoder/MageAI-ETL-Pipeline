@@ -60,7 +60,7 @@ def load_data(*args, **kwargs):
 
     ## Use the above helper function
 
-    search_terms = ['laptop', 'phone', 'ipad', 'iphone', 'samsung galaxy s22']
+    search_terms = ['laptop', 'phone', 'ipad', 'iphone', 'samsung_galaxy_s22']
 
     dictionary = {}
 
