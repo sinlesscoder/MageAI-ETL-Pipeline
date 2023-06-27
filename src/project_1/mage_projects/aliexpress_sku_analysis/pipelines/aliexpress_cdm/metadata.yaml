@@ -23,12 +23,12 @@ blocks:
   has_callback: false
   language: python
   name: common_data_model
-  status: not_executed
+  status: executed
   type: transformer
   upstream_blocks:
   - retrieve_mongo_collection_names
   uuid: common_data_model
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration: {}
   downstream_blocks: []
@@ -37,19 +37,17 @@ blocks:
   has_callback: false
   language: python
   name: load_cdm_postgres
-  status: not_executed
+  status: executed
   type: data_exporter
   upstream_blocks:
   - common_data_model
   uuid: load_cdm_postgres
-callbacks: []
 data_integration: null
 description: Pipeline to generate a common data model that exports to PostgreSQL for
   all search terms and page numbers from aliexpress item data.
-executor_count: 1
 extensions: {}
 name: aliexpress_cdm
 type: python
-updated_at: '2023-06-07 09:50:22'
+updated_at: '2023-06-14 00:53:45'
 uuid: aliexpress_cdm
 widgets: []

@@ -43,7 +43,9 @@ blocks:
   - standardize_data
   uuid: processed_data
 data_integration: null
-description: null
+description: Uses the RAPID API for ALiexpress to get the item data for a specific
+  search term and migrates the data into a MongoDB collection for first 2 pages of
+  information.
 extensions: {}
 name: generate_random_standardized_data
 type: python
