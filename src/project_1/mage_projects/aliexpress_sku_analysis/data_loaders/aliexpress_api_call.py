@@ -1,4 +1,5 @@
 import requests
+from pymongo import MongoClient
 
 if 'data_loader' not in globals():
     from mage_ai.data_preparation.decorators import data_loader
@@ -48,6 +49,21 @@ def retrieve_item_pages(search_query: str):
     
     return page_results
 
+# Helper Function for viewing currently existing collections
+def retrieve_collection_names(db_name: str):
+    uri='104.225.217.176:8363'
+
+    client = MongoClient(uri)
+
+    db = client[db_name]
+
+    # See all the collections
+    results = db.list_collection_names()
+
+    print(results)
+
+    return results
+
 @data_loader
 def load_data(*args, **kwargs):
     """
@@ -60,7 +76,11 @@ def load_data(*args, **kwargs):
 
     ## Use the above helper function
 
-    search_terms = ['laptop', 'phone', 'ipad', 'iphone', 'samsung galaxy s22']
+    current_collections = retrieve_collection_names('aliexpress_items')
+
+    all_terms = ['laptop', 'phone', 'ipad', 'iphone', 'samsung galaxy s22']
+
+    search_terms = [term for term in all_terms if term not in current_collections]
 
     dictionary = {}
 
