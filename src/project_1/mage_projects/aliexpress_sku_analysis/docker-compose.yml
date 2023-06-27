@@ -28,6 +28,6 @@ services:
     environment:
       - REQUIRE_USER_AUTHENTICATION=1
     volumes:
-      - $(pwd):/home/src
+      - '$(pwd):/home/src'
     restart: on-failure
     command: mage start .
