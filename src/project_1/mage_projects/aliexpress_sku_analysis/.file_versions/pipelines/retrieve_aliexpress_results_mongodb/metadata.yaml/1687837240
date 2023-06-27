@@ -1,0 +1,43 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - export_api_results_mongodb
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: aliexpress_api_call
+  retry_config: null
+  status: updated
+  type: data_loader
+  upstream_blocks: []
+  uuid: aliexpress_api_call
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: export_api_results_mongodb
+  retry_config: null
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - aliexpress_api_call
+  uuid: export_api_results_mongodb
+callbacks: []
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: retrieve_aliexpress_results_mongodb
+type: python
+updated_at: '2023-06-27 03:40:39'
+uuid: retrieve_aliexpress_results_mongodb
+widgets: []

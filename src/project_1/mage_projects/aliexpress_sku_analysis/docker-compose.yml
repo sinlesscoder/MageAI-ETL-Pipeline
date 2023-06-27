@@ -1,0 +1,33 @@
+version: '3.3'
+
+services:
+  # PostgreSQL Server
+  sku_ali_postgresql:
+    container_name: sku_ali_postgresql
+    image: postgres:latest
+    ports:
+      - '8362:5432'
+    environment:
+      - POSTGRES_PASSWORD=pathrise2023!
+    restart: on-failure
+
+  # MongoDB Server
+  sku_ali_mongodb:
+    container_name: sku_ali_mongodb
+    image: mongo:latest
+    ports:
+      - '8363:27017'
+    restart: on-failure
+
+  # MageAI Server
+  sku_ali_mageai:
+    container_name: sku_ali_mageai
+    image: mageai/mageai:latest
+    ports:
+      - '8371:6789'
+    environment:
+      - REQUIRE_USER_AUTHENTICATION=1
+    volumes:
+      - '.:/home/src'
+    restart: on-failure
+    command: mage start .

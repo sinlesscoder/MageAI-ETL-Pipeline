@@ -1,0 +1,1 @@
+"{\"data\": [\"[__internal_test__]{\\\"message\\\": \\\"1/1 tests passed.\\\"}\", \"\"], \"error\": null, \"execution_state\": null, \"metadata\": null, \"msg_id\": \"4b5dc780-bd606c0b8dafe965f59fc722_1_11\", \"msg_type\": \"stream\", \"type\": \"text/plain\", \"block_type\": \"data_loader\", \"pipeline_uuid\": null, \"uuid\": \"aliexpress_api_call\"}"
