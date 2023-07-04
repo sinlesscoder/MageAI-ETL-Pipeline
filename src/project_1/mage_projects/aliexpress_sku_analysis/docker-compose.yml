@@ -14,7 +14,7 @@ services:
   # MongoDB Server
   sku_ali_mongodb:
     container_name: sku_ali_mongodb
-    image: mongo:latest
+    image: mongo
     ports:
       - '8363:27017'
     restart: on-failure
@@ -22,7 +22,7 @@ services:
   # MageAI Server
   sku_ali_mageai:
     container_name: sku_ali_mageai
-    image: mageai/mageai:latest
+    image: mageai/mageai
     ports:
       - '8371:6789'
     environment:
