@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+  remote_selenium:
+    container_name: remote_selenium_ali
+    image: selenium/standalone-chrome:latest
+    ports:
+      - '4445:4444'
+      - '7901:7900'
+    shm_size: '2g'
+    restart: on-failure
+
+  selenium_scraped_postgres:
+    container_name: selenium_scraped_postgres_ali
+    image: postgres:latest
+    ports:
+      - '9000:5432'
+    environment:
+      - POSTGRES_PASSWORD=pathrise2023!
+    restart: on-failure
+
+  selenium_streamlit_app:
+    container_name: selenium_streamlit_app_ali
+    build: ./streamlit_app
+    ports:
+      - '9001:9001'
+    restart: on-failure
