@@ -3,3 +3,6 @@ streamlit
 seaborn
 sqlalchemy==1.4.48
 psycopg2-binary
+lxml
+html5lib
+beautifulsoup4
