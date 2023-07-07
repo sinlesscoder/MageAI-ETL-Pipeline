@@ -75,7 +75,7 @@ user_age = st.number_input('Type in your age: ', min_value=1, max_value=200, val
 user_area = st.text_input("Type in an area: ")
 
 # Upload a profile photo
-uploaded_image= st.file_uploader("Upload an image: ", type=['png', 'jpg', 'webp', 'gif', 'jpeg'])
+uploaded_image = st.file_uploader("Upload an image: ", type=['png', 'jpg', 'webp', 'gif', 'jpeg'])
 
 # Upload button
 if st.button('Upload'):

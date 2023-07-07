@@ -43,7 +43,7 @@ class ScrapeTable:
         self.query = self.browser.find_element(By.XPATH, self.xpath)
 
         # Create list of results
-        self.results = pd.read_html(self.query.get_attribute('innerHTML'))
+        self.results = pd.read_html(self.query.get_attribute('outerHTML'))
 
         return self.results
     
