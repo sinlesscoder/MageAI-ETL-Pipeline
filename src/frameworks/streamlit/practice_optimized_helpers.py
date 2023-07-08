@@ -45,6 +45,37 @@ def duckdb_connection(db_name: str):
 
     return con
 
+# Function to load a DuckDB table
+def load_duckdb_table(table_name: str):
+    # Create duckdb connection
+    cursor = duckdb_connection('results.db')
+
+    # Read the table_name as a pandas DataFrame
+    result_df = pd.read_sql_table(table_name, con=cursor)
+
+    return result_df
+
+# Create a function that turns a DataFrame into a data_list
+def df_to_data_list(df: pd.DataFrame):
+    # Create the data list
+    data_list = []
+
+    # Remove duplicates
+    df.drop_duplicates(inplace=True)
+
+    # Go through each row
+    for i in range(df.shape[0]):
+        # Get the row
+        row = df.iloc[i]
+
+        # Create the object from the row
+        obj = create_object(row['name'], row['age'], row['area'], row['image'])
+
+        # Add the object to the data list
+        data_list.append(obj)
+    
+    return data_list
+
 # Function to turn DataFrame into SQL table in duckDB
 def create_duckdb_sql_table(data):
     # Upload the data to pandas DataFrame

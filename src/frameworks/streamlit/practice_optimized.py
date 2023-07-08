@@ -1,13 +1,19 @@
 import streamlit as st
 from os import getcwd
-from practice_optimized_helpers import create_object, create_duckdb_sql_table, render_image
+from practice_optimized_helpers import create_object, load_duckdb_table, create_duckdb_sql_table, df_to_data_list, render_image
 
-# Hard-coded Data
-data = [
-    create_object('John', 25, 'New York', f'{getcwd()}/new-york-new-york-city.gif'),
-    create_object('Emma', 28, 'London', f'{getcwd()}/fb95eca49cf3f2af57455b1358f1ec39193ce256.webp'),
-    create_object('Tom', 32, 'Paris', f'{getcwd()}/france-eiffel-tower-paris.jpg')
-]
+# Load the table
+results_df = load_duckdb_table('results')
+
+# # Hard-coded Data
+# data = [
+#     create_object('John', 25, 'New York', f'{getcwd()}/new-york-new-york-city.gif'),
+#     create_object('Emma', 28, 'London', f'{getcwd()}/fb95eca49cf3f2af57455b1358f1ec39193ce256.webp'),
+#     create_object('Tom', 32, 'Paris', f'{getcwd()}/france-eiffel-tower-paris.jpg')
+# ]
+
+# Create the data list
+data = df_to_data_list(results_df)
 
 # Adding a Centered Title
 st.markdown("<h1 style='text-align:center'>Social Profile App </h1>", unsafe_allow_html=True)
