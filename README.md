@@ -97,10 +97,6 @@
 ---
 
 - Boto3
-- Data Stores
-  - RDS
-  - Redshift
-  - DynamoDB
 - Data Engineering
   - Glue
   - Glue Catalog and Glue Crawlers
@@ -112,6 +108,10 @@
 - Analytics
   - QuickSight
   - DataBrew
+- Data Stores
+  - RDS
+  - Redshift
+  - DynamoDB
 - Machine Learning
   - SageMaker
   - Elastic Container Registry (ECR)
