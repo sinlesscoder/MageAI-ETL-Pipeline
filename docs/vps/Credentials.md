@@ -16,6 +16,10 @@ ssh aahmed@172.93.55.84
 
 - When prompted, type in your password. It won't show up on the actual terminal, but just type the keys as written for the password and then hit enter.
 
+---
+
+## Use the one below
+
 ### Credentials for ChanR-N1 Server
 
 - **username**: `aahmed`
