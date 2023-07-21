@@ -46,3 +46,7 @@ manager = ClientCredentialsManager(client_id, client_secret)
 # Instantiate Spotify client
 client = Spotify(client_credentials_manager=manager)
 ```
+
+### Resources
+
+- [SpyVanilla is the GOAT](https://github.com/spotipy-dev/spotipy/issues/687)
