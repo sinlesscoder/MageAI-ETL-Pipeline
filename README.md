@@ -16,16 +16,27 @@
 
 ### Projects
 
-- AliExpress API Response to PostgreSQL ETL
-- Streamlit Applications
-  - Reading Tables from Selenium
-  - DuckDB Caching a View of People
-- COVID-19 ETL and Analytics Dashboard with AWS
-  - Dashboard with QuickSight
-  - ETL Using Glue and Data Pipeline
-- Computer-Vision Diagnosis Mobile App
-  - Mobile App
-  - Deployed Computer Vision Model
+1. AliExpress API Response to PostgreSQL ETL
+2. Streamlit Applications
+
+- Reading Tables from Selenium
+- DuckDB Caching a View of People
+
+3. COVID-19 ETL and Analytics Dashboard with AWS
+
+- Dashboard with QuickSight
+- ETL Using Glue and Data Pipeline
+
+4. Spotify Lambda Architecture Pipeline System
+
+- Streamlit App for Data Collection
+- Data Processing in PySpark in Production
+- Data Streaming with Apache Kafka
+
+5. Computer-Vision Diagnosis Mobile App
+
+- Mobile App
+- Deployed Computer Vision Model
 
 ### Skills
 
