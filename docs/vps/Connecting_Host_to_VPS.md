@@ -5,7 +5,7 @@
 1. Use `ssh` to connect to the remote host.
 
 ```bash
-ssh aahmed@172.93.55.84
+ssh aahmed@209.182.236.218
 ```
 
 2. Type in your password when trying to connect.
@@ -31,7 +31,7 @@ ssh aahmed@172.93.55.84
 6. Pass in your ssh connection.
 
 ```bash
-ssh aahmed@172.93.55.84
+ssh aahmed@209.182.236.218
 ```
 
 7. Select the first option for `sshconfig`.
