@@ -54,7 +54,7 @@ def kvmapper(docs: list):
     first_row = df.iloc[0]
 
     for col in df.columns:
-        if isinstance(first_row[col], int):
+        if isinstance(first_row[col], int) or isinstance(first_row[col], float):
             # Add key,value pair for kv_mapped
             kv_mapped[col] = 'number'
         elif isinstance(first_row[col], str):
