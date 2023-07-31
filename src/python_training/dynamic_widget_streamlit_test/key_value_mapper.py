@@ -1,3 +1,4 @@
+from pandas import json_normalize
 from mongo_db import connect_mongo
 from pymongo.collection import Collection
 
@@ -41,15 +42,26 @@ sample = mongo_db['sample']
 sample_kv = key_value_mapper(sample)
 
 # If statement
-def instance_control_flow(dictionary, val):
-    if isinstance(dictionary[val], int):
-        print("this is a numerical value")
-    elif isinstance(dictionary[val], str):
-        print("this is a string value")
+def kvmapper(docs: list):
 
-instance_control_flow(sample_kv, 'name')
+    # Convert docs into dataframe
+    df = json_normalize(docs)
 
-# print(isinstance('apple', str))
+    # Dictionary to map keys to their types
+    kv_mapped = {}
 
-# ex = type('string')
-# print(type(ex))
+    # Get first row of dataframe
+    first_row = df.iloc[0]
+
+    for col in df.columns:
+        if isinstance(first_row[col], int):
+            # Add key,value pair for kv_mapped
+            kv_mapped[col] = 'number'
+        elif isinstance(first_row[col], str):
+            kv_mapped[col] = 'string'
+    
+    return kv_mapped
+
+sample_docs = [doc for doc in sample.find()]
+
+print(kvmapper(sample_docs))
