@@ -20,7 +20,33 @@ st.title("Hello Streamlit")
 filter_collector = []
 
 # Helper Function
-def view_widgets(updated_kv, sample_docs, filter_collector):
+# def view_widgets(updated_kv, sample_docs, filter_collector):
+    
+# Collection to work with
+col_choice = st.selectbox("Choose a MongoDB collection to work with: ", options=['stock_market', 'spotify_tracks', 'sample'])
+sample = mongo_db[col_choice]
+
+# Key Value Mapping
+# Sample documents
+sample_docs = [doc for doc in sample.find()]
+
+# Apply kvmapper
+kv_mapped = kvmapper(sample_docs)
+
+# Define updated_kv as kv_mapped
+updated_kv = read_json()
+
+# Cols to Select
+chosen_keys = st.multiselect("Choose columns you want to query: ", list(kv_mapped.keys()))
+
+# Modify button
+if st.button("Modify"):
+    updated_kv = {k:v for k,v in kv_mapped.items() if k in chosen_keys}
+    result_serialize(updated_kv)
+    widget_state = True
+
+    
+with st.expander("Expand to view your results: ", expanded=True):
     # Create logic to build the widgets
     for i, key in enumerate(updated_kv):
         # Build widget based on type
@@ -36,42 +62,6 @@ def view_widgets(updated_kv, sample_docs, filter_collector):
     # Button
     if st.button("View sub-filters"):
         st.json(filter_collector)
-
-
-
-widget_state = False
-
-# Side bar
-with st.sidebar:
-    # Collection to work with
-    col_choice = st.selectbox("Choose a MongoDB collection to work with: ", options=['stock_market', 'spotify_tracks', 'sample'])
-    sample = mongo_db[col_choice]
-
-    # Key Value Mapping
-    # Sample documents
-    sample_docs = [doc for doc in sample.find()]
-
-    # Apply kvmapper
-    kv_mapped = kvmapper(sample_docs)
-
-    # Define updated_kv as kv_mapped
-    updated_kv = read_json()
-
-    # Cols to Select
-    chosen_keys = st.multiselect("Choose columns you want to query: ", list(kv_mapped.keys()))
-
-    # Modify button
-    if st.button("Modify"):
-        updated_kv = {k:v for k,v in kv_mapped.items() if k in chosen_keys}
-        result_serialize(updated_kv)
-        widget_state = True
-
-    
-with st.expander("Expand to view your results: ", expanded=True):
-    if widget_state == True:
-        view_widgets(updated_kv, sample_docs, filter_collector)
-    else:
-        st.write("Make selections in the side bar.")
 
 
 
