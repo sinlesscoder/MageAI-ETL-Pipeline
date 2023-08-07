@@ -1,4 +1,4 @@
-## Intro to DuckDB
+## Intro to DuckDB Engine
 
 ### Description
 
