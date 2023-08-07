@@ -11,4 +11,4 @@
 - [August 6, 2023: Python Coding Mock Interview](https://share.getcloudapp.com/4guXGrnx)
 - [August 6, 2023: Python Coding Mock Interview with Communication](https://share.getcloudapp.com/nOuL2Xrm)
 - [August 6, 2023: System Design Mock Interview](https://share.getcloudapp.com/YEu4bk9Y)
-- [August 6, 2023: DuckDB Fundamentals]()
+- [August 6, 2023: DuckDB Fundamentals](https://share.getcloudapp.com/NQup9jbw)
