@@ -10,4 +10,5 @@
 - [August 6, 2023: Easily Going back between JSON and Pandas]()
 - [August 6, 2023: Python Coding Mock Interview](https://share.getcloudapp.com/4guXGrnx)
 - [August 6, 2023: Python Coding Mock Interview with Communication](https://share.getcloudapp.com/nOuL2Xrm)
+- [August 6, 2023: System Design Mock Interview](https://share.getcloudapp.com/YEu4bk9Y)
 - [August 6, 2023: DuckDB Fundamentals]()
