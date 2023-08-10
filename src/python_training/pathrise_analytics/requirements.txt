@@ -1,0 +1,6 @@
+duckdb
+pandas
+sqlalchemy==1.4.49
+matplotlib
+psycopg2-binary
+streamlit
