@@ -5,15 +5,15 @@ from skimage.io import imread
 
 
 # Create the data object as a function
-def create_object(name, age, area, image_url):
-    result = {
-        'name' : name,
-        'age': age,
-        'area': area,
+def create_object(username, password, bio, image_url):
+    infos = {
+        'username' : username,
+        'password': password,
+        'bio': bio,
         'image': image_url
     }
 
-    return result
+    return infos
 
 # Convert data list to pandas DataFrame
 def create_df_from_objects(data_list):
@@ -21,15 +21,15 @@ def create_df_from_objects(data_list):
     keys = list(data_list[0].keys())
 
     # Create an empty dictionary
-    result_dict = {key : [] for key in keys}
+    infos_dict = {key : [] for key in keys}
 
     for obj in data_list:
         for key in keys:
             # Transform into dictionary with lists of similar keys in each
-            result_dict[key].append(obj[key])
+            infos_dict[key].append(obj[key])
     
     # Convert to pandas DataFrame
-    return pd.DataFrame.from_dict(result_dict)
+    return pd.DataFrame.from_dict(infos_dict)
 
 # DuckDB Object Creation
 def duckdb_connection(db_name: str):
@@ -49,12 +49,12 @@ def duckdb_connection(db_name: str):
 # Function to load a DuckDB table
 def load_duckdb_table(table_name: str):
     # Create duckdb connection
-    cursor = duckdb_connection('results.db')
+    cursor = duckdb_connection('infos.db')
 
     # Read the table_name as a pandas DataFrame
-    result_df = pd.read_sql_table(table_name, con=cursor)
+    infos_df = pd.read_sql_table(table_name, con=cursor)
 
-    return result_df
+    return infos_df
 
 # Create a function that turns a DataFrame into a data_list
 def df_to_data_list(df: pd.DataFrame):
@@ -70,7 +70,7 @@ def df_to_data_list(df: pd.DataFrame):
         row = df.iloc[i]
 
         # Create the object from the row
-        obj = create_object(row['name'], row['age'], row['area'], row['image'])
+        obj = create_object(row['username'], row['password'], row['bio'], row['image'])
 
         # Add the object to the data list
         data_list.append(obj)
@@ -80,13 +80,13 @@ def df_to_data_list(df: pd.DataFrame):
 # Function to turn DataFrame into SQL table in duckDB
 def create_duckdb_sql_table(data):
     # Upload the data to pandas DataFrame
-    result_df = create_df_from_objects(data)
+    infos_df = create_df_from_objects(data)
 
     # Create duckdb connection
-    duckdb_con = duckdb_connection('results.db')
+    duckdb_con = duckdb_connection('infos.db')
 
     # Export the DataFrame to a DuckDB table
-    result_df.to_sql('results', con=duckdb_con, index=False, if_exists='replace')
+    infos_df.to_sql('infos', con=duckdb_con, index=False, if_exists='append')
 
     print("New records added to DuckDB database.")
 
