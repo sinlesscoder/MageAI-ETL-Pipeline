@@ -1,0 +1,5 @@
+pandas
+duckdb
+duckdb-engine
+sqlalchemy==1.4.48
+pytest
