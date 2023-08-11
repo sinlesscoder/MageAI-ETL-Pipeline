@@ -1,0 +1,10 @@
+version: '3.3'
+
+services:
+  # MongoDB Instance
+  game_project_mongodb:
+    container_name: game_project_ali_mongodb
+    image: mongo:4.4.20
+    ports:
+      - 8057:27017
+    restart: on-failure
