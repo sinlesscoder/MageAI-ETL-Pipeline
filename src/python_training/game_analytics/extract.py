@@ -6,7 +6,7 @@ from os import getcwd
 # Connection Object
 con = engine.connect()
 
-# Read the aliexpress_results table
+# Read the api table
 df = pd.read_sql_table('api_results', con=con)
 
 # View first 5 rows

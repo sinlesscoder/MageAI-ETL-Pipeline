@@ -68,3 +68,20 @@ def retrieve_item_pages(search_query: str):
     
     return page_results
 
+def retrieve_item_2_pages(search_query: str):
+    """
+    Inputs:
+        - search_query (string): Query that a user submits to get item information
+    
+    Output:
+        - page_results (list): List of results from API for first page
+    """
+    # Page Results
+    page_results = []
+    
+    # Iterate over the first 1 pages
+    for i in range(1, 2):
+        result = search_item_2(search_query, i)
+        page_results.append(result)
+    
+    return page_results
