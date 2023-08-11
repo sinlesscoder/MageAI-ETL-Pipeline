@@ -1,4 +1,3 @@
-import sqlalchemy
 from sqlalchemy import create_engine
 from getpass import getpass
 

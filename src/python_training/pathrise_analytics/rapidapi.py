@@ -50,9 +50,6 @@ def search_item_2(search_query: str, page_number: int):
 
     return result
 
-
-
-
 def retrieve_item_pages(search_query: str):
     """
     Inputs:
@@ -70,3 +67,4 @@ def retrieve_item_pages(search_query: str):
         page_results.append(result)
     
     return page_results
+
