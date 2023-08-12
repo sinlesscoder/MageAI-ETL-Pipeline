@@ -17,3 +17,4 @@
 - [August 7, 2023: Intro to Redis with Python Demo]()
 - [August 8, 2023: DuckDB Connection Review](https://share.getcloudapp.com/kpulzeRE)
 - [August 8, 2023: Creating Unit Tests for DuckDB Connection with PyTest](https://share.getcloudapp.com/Wnu65X9A)
+- [August 10, 2023: Working Session on Gaming API](https://share.getcloudapp.com/qGu6Gddj)
