@@ -4,7 +4,7 @@ from datetime import datetime
 
 # Connection to MongoDB
 
-def retrieve_mongo_connection(uri='209.182.236.218:8057'):
+def retrieve_mongo_connection(collection_name:str, database_name:str,uri='209.182.236.218:8057'):
     """
     Inputs:
         - search_term (string): Search term for the query of API
@@ -17,12 +17,18 @@ def retrieve_mongo_connection(uri='209.182.236.218:8057'):
     client = MongoClient(uri)
 
     # Create a database
-    database = client['gaming']
+    database = client[collection_name]
 
     # Create a collection
-    collection_name = database['Batman']
+    collection_name = database[database_name]
 
-    return collection_name
+    # See all the collections
+    results = database.list_collection_names()
+
+    # Dictionary for All Collections
+    col_dict = {col: [obj for obj in col.find()] for col in results}
+
+    return collection_name #, col_dict
 
 # Prepare Data
 def prepare_data_mongo(search_term: str):
@@ -62,5 +68,4 @@ def db_load(search_term: str):
     collection_name.insert_one(result_dict)
 
     return result_dict
-
 
