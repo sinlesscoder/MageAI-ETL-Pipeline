@@ -1,5 +1,4 @@
-import SQLAlchemy
-from SQLAlchemy import create_engine
+from sqlalchemy import create_engine
 from getpass import getpass
 
 # Add your credentials
