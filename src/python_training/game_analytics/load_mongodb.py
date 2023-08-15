@@ -42,42 +42,41 @@ def retrieve_all_collections(database_name: str, uri='209.182.236.218:8057') -> 
 
 
 
-# Prepare Data
-def prepare_data_mongo(search_term: str):
-    """
-    Inputs:
-        - search_term (string): Search query for item information
-    Output:
-        - result_dict (dictionary): Dictionary containing key, 
-            values of page number mapped to actual JSON result
-    """
-    # Get results
-    results = retrieve_item_pages(search_term)
+# # Prepare Data
+# def prepare_data_mongo(search_term: str):
+#     """
+#     Inputs:
+#         - search_term (string): Search query for item information
+#     Output:
+#         - result_dict (dictionary): Dictionary containing key, 
+#             values of page number mapped to actual JSON result
+#     """
+#     # Get results
+#     results = retrieve_item_pages(search_term)
 
-    # Convert above into a dictionary
-    result_dict = {f"{i+1}" : result for i, result in enumerate(results)}
+#     # Convert above into a dictionary
+#     result_dict = {f"{i+1}" : result for i, result in enumerate(results)}
 
-    return result_dict
+#     return result_dict
 
-def db_load(search_term: str):
-    """
-    Inputs:
-        - search_term (string)
-    Output:
-        - result_dict (dictionary): Dictionary containing results
-            with pages as keys
-    """
-    # Get the Mongo collection
-    collection_name = retrieve_mongo_connection(search_term)
+# def db_load(search_term: str):
+#     """
+#     Inputs:
+#         - search_term (string)
+#     Output:
+#         - result_dict (dictionary): Dictionary containing results
+#             with pages as keys
+#     """
+#     # Get the Mongo collection
+#     collection_name = retrieve_mongo_connection(search_term)
 
-    # Get the result dictionary
-    result_dict = prepare_data_mongo(search_term)
+#     # Get the result dictionary
+#     result_dict = prepare_data_mongo(search_term)
 
-    # Getting current date time as a string
-    result_dict['updated_at'] = str(datetime.now())
+#     # Getting current date time as a string
+#     result_dict['updated_at'] = str(datetime.now())
 
-    # Insert the Dictionary as an Object in the MongoDB Collection
-    collection_name.insert_one(result_dict)
+#     # Insert the Dictionary as an Object in the MongoDB Collection
+#     collection_name.insert_one(result_dict)
 
-    return result_dict
-
+#     return result_dict

@@ -1,0 +1,4 @@
+2023-08-14 15:29:42 [INFO] Question: How many row has to do with batman?
+2023-08-14 15:29:42 [INFO] Running PandasAI with openai LLM...
+2023-08-14 15:29:42 [INFO] Prompt ID: 7659a0b7-3f59-48df-a075-fe68831a8ac8
+2023-08-14 15:29:42 [INFO] error_code=invalid_api_key error_message='Incorrect API key provided: API_KEY. You can find your API key at https://platform.openai.com/account/api-keys.' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False

@@ -20,7 +20,7 @@ def opencritic_game_search(game_name: str):
     querystring = {"criteria": game_name}
 
     headers = {
-        "X-RapidAPI-Key": "90d6f20e25msh26f3b3c0cc23025p1fa1dajsn46ee4c3bd0d5",
+	    "X-RapidAPI-Key": "ec2578b31bmsh1c07c7237ff7875p181132jsnd6768d4a7029",
         "X-RapidAPI-Host": "opencritic-api.p.rapidapi.com"
     }
 
