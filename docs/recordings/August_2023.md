@@ -19,3 +19,5 @@
 - [August 8, 2023: Creating Unit Tests for DuckDB Connection with PyTest](https://share.getcloudapp.com/Wnu65X9A)
 - [August 10, 2023: Working Session on Gaming API](https://share.getcloudapp.com/qGu6Gddj)
 - [August 10, 2023: Gaming API Common Data Model Fix](https://share.getcloudapp.com/jkuRklmo)
+- [August 14, 2023: Strategy Guide: Fuzzy String Matching and Creating Game Subset](https://share.getcloudapp.com/Jrue9k7x)
+- [August 15, 2023: Using Combinations from Itertools to Generate Pairs for Efficient Looping](https://share.getcloudapp.com/2NupZ7lo)
