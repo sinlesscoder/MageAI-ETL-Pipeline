@@ -11,8 +11,8 @@ def mismatch(col_name: str, col_name_2: str, database: str):
     df_2 = normalize_collection(col_name_2, database)
     for i in range(len(df_2)):
         for j in range(len(df)):
-            result = fuzz.partial_ratio(df_2.loc[i,'name'],df.loc[j, 'title'])
-            if result >= 80:
+            result = fuzz.partial_ratio(df_2.loc[i,'name'], df.loc[j, 'title'])
+            if result >= 90:
                 print(str(result) + ' - ' + df_2.loc[i,'name'] + ' -- ' + df.loc[j, 'title'])
 
 mismatch('cheapshark_col', 'opencritic_col', 'Database_1')
