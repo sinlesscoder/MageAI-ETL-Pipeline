@@ -1,6 +1,0 @@
-__pycache__
-env/
-data/
-*.json
-*.wal
-.DS_Store

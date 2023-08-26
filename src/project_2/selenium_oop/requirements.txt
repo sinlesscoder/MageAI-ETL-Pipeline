@@ -1,5 +1,0 @@
-pandas
-selenium
-lxml
-html5lib
-beautifulsoup4
