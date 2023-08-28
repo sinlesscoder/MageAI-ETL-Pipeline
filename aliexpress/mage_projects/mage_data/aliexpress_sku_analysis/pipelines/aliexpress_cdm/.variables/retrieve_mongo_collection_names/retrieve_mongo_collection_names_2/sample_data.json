@@ -1,1 +1,0 @@
-"{\"data\": [\"'iphone'\", \"\"], \"error\": null, \"execution_state\": null, \"metadata\": {}, \"msg_id\": \"4b5dc780-bd606c0b8dafe965f59fc722_1_1\", \"msg_type\": \"execute_result\", \"type\": \"text/plain\", \"block_type\": \"data_loader\", \"pipeline_uuid\": null, \"uuid\": \"retrieve_mongo_collection_names\"}"
