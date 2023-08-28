@@ -15,8 +15,8 @@ def search_item(search_query: str, page_number: int):
     querystring = {"q":search_query,"page":page_number}
 
     headers = {
-        "X-RapidAPI-Key": "90d6f20e25msh26f3b3c0cc23025p1fa1dajsn46ee4c3bd0d5",
-        "X-RapidAPI-Host": "aliexpress-datahub.p.rapidapi.com"
+        "X-RapidAPI-Key",
+        "X-RapidAPI-Host"
     }
 
     response = requests.get(url, headers=headers, params=querystring)
