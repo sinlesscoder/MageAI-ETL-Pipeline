@@ -37,4 +37,4 @@ def common_data_model(search_terms: list):
 
 result = common_data_model(search_terms)
 
-print(result.tail())
+print(result.keys())

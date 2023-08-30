@@ -5,7 +5,7 @@ if 'data_exporter' not in globals():
 
 
 # Helper Function: Connecting to Mongo
-def retrieve_mongo_connection(search_term: str, uri='104.225.217.176:8363'):
+def retrieve_mongo_connection(search_term: str, uri):
     """
     Inputs:
         - search_term (string): Search term for the query of API

@@ -7,5 +7,5 @@ show_collections.py
 io_config.yaml
 metadata.yaml
 stratchpad
-_pycache_
+__pycache__
 create_data_profile.py
