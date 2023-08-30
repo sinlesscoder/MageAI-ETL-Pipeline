@@ -1,4 +1,6 @@
 .file_versions
 mage_data
+uri.json
 rapidapi.json
-**processed_random_data.csv
+processed_random_data.csv
+aliexpress/show_collections.py
