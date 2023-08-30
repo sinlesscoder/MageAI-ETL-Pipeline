@@ -8,7 +8,7 @@ def postgres_connection():
     # Credentials for the connection
     username = 'postgres'
     password = 'pathrise2023!'
-    host = '104.225.217.176'
+    host = uri
     port = 8362
     db_name = 'project'
 
@@ -43,5 +43,4 @@ def export_data(data, *args, **kwargs):
     
     # Loading as a SQL table in Postgres server
     data.to_sql('aliexpress_results', con=cursor, index=False, if_exists='replace')
-
 
