@@ -51,7 +51,6 @@ def retrieve_item_pages(search_query: str):
 
 # Helper Function for viewing currently existing collections
 def retrieve_collection_names(db_name: str):
-    uri='104.225.217.176:8363'
 
     client = MongoClient(uri)
 

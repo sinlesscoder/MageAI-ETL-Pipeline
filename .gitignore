@@ -3,4 +3,9 @@ mage_data
 uri.json
 rapidapi.json
 processed_random_data.csv
-aliexpress/show_collections.py
+show_collections.py
+io_config.yaml
+metadata.yaml
+stratchpad
+_pycache_
+create_data_profile.py
