@@ -1,8 +1,11 @@
 from datetime import datetime
 from pymongo import MongoClient
+from json_read import json_reader
+
 if 'data_exporter' not in globals():
     from mage_ai.data_preparation.decorators import data_exporter
 
+uri = json_reader("URI")
 
 # Helper Function: Connecting to Mongo
 def retrieve_mongo_connection(search_term: str, uri):
