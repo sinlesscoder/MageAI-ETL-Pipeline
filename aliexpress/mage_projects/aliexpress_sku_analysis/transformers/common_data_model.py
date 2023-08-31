@@ -7,10 +7,9 @@ if 'transformer' not in globals():
 if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
 
-uri = json_reader("URI")
 
 # Retrieve Mongo Collection
-def retrieve_mongo_connection(search_term: str, uri):
+def retrieve_mongo_connection(search_term: str):
     """
     Inputs:
         - search_term (string): Search term for the query of API
@@ -19,6 +18,8 @@ def retrieve_mongo_connection(search_term: str, uri):
     Output:
         - collection_name (Mongo.Collection): Collection to store your results.
     """
+    uri = json_reader("URI")
+
     # Set up a Mongo Client
     client = MongoClient(uri)
 

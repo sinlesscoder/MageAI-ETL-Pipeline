@@ -4,7 +4,7 @@ from datetime import datetime
 from json_read import json_reader
 
 # Connection to MongoDB
-def retrieve_mongo_connection(search_term: str, uri):
+def retrieve_mongo_connection(search_term: str):
     """
     Inputs:
         - search_term (string): Search term for the query of API
