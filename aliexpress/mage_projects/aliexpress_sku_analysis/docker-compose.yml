@@ -8,7 +8,7 @@ services:
     ports:
       - '8362:5432'
     environment:
-      - POSTGRES_PASSWORD=pathrise2023!
+      - POSTGRES_PASSWORD=12345!
     restart: on-failure
 
   # MongoDB Server

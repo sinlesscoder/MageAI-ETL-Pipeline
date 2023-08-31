@@ -1,4 +1,5 @@
 from sqlalchemy import create_engine
+from json_read import json_reader
 
 if 'data_exporter' not in globals():
     from mage_ai.data_preparation.decorators import data_exporter
@@ -7,9 +8,9 @@ if 'data_exporter' not in globals():
 def postgres_connection():
     # Credentials for the connection
     username = 'postgres'
-    password = 'pathrise2023!'
-    host = uri
-    port = 8362
+    password = password
+    host = json_reader("HOST")
+    port = json_reader("PORT")
     db_name = 'project'
 
     # Establishing an Authentication URI
@@ -43,4 +44,5 @@ def export_data(data, *args, **kwargs):
     
     # Loading as a SQL table in Postgres server
     data.to_sql('aliexpress_results', con=cursor, index=False, if_exists='replace')
+
 

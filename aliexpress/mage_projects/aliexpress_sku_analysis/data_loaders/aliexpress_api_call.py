@@ -1,5 +1,6 @@
 import requests
 from pymongo import MongoClient
+from json_read import json_reader
 
 if 'data_loader' not in globals():
     from mage_ai.data_preparation.decorators import data_loader
@@ -20,10 +21,10 @@ def search_item(search_query: str, page_number: int):
 
     querystring = {"q":search_query,"page":page_number}
 
-    headers = {
-        "X-RapidAPI-Key",
-        "X-RapidAPI-Host"
-    }
+    key = json_reader("X-RapidAPI-Key")
+    host = json_reader("X-RapidAPI-Host")
+
+    headers = {key, host}
 
     response = requests.get(url, headers=headers, params=querystring)
 
@@ -51,6 +52,8 @@ def retrieve_item_pages(search_query: str):
 
 # Helper Function for viewing currently existing collections
 def retrieve_collection_names(db_name: str):
+    
+    uri = json_reader("URI")
 
     client = MongoClient(uri)
 

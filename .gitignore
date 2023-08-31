@@ -1,7 +1,6 @@
 .file_versions
 mage_data
-uri.json
-rapidapi.json
+hidden.json
 processed_random_data.csv
 show_collections.py
 io_config.yaml

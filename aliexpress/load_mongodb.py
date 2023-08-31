@@ -1,10 +1,10 @@
 from extract_aliexpress_data import retrieve_item_pages
 from pymongo import MongoClient
 from datetime import datetime
+from json_read import json_reader
 
 # Connection to MongoDB
-
-def retrieve_mongo_connection(search_term: str, uri='104.225.217.176:8363'):
+def retrieve_mongo_connection(search_term: str, uri):
     """
     Inputs:
         - search_term (string): Search term for the query of API
@@ -13,6 +13,9 @@ def retrieve_mongo_connection(search_term: str, uri='104.225.217.176:8363'):
     Output:
         - collection_name (Mongo.Collection): Collection to store your results.
     """
+    # Read from JSON
+    uri = json_reader('URI')
+
     # Set up a Mongo Client
     client = MongoClient(uri)
 
@@ -21,6 +24,9 @@ def retrieve_mongo_connection(search_term: str, uri='104.225.217.176:8363'):
 
     # Select a collection
     collection_name = database[search_term]
+
+    # for document in collection_name.find():
+    #     print(document)
 
     return collection_name
 
@@ -62,5 +68,3 @@ def db_load(search_term: str):
     collection_name.insert_one(result_dict)
 
     return result_dict
-
-

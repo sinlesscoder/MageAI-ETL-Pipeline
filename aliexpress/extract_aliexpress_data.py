@@ -1,4 +1,5 @@
 import requests
+from json_read import json_reader
 
 def search_item(search_query: str, page_number: int):
     """
@@ -15,8 +16,8 @@ def search_item(search_query: str, page_number: int):
     querystring = {"q":search_query,"page":page_number}
 
     headers = {
-        "X-RapidAPI-Key",
-        "X-RapidAPI-Host"
+        json_reader("X-RapidAPI-Key"),
+        json_reader("X-RapidAPI-Host")
     }
 
     response = requests.get(url, headers=headers, params=querystring)

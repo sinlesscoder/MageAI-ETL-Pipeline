@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from json_read import json_reader
 
 if 'data_loader' not in globals():
     from mage_ai.data_preparation.decorators import data_loader
@@ -7,7 +8,7 @@ if 'test' not in globals():
 
 # Helper Function
 def retrieve_collection_names(db_name: str):
-    uri='104.225.217.176:8363'
+    uri= json_reader("URI")
 
     client = MongoClient(uri)
 

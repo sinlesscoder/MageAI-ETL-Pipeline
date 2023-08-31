@@ -2,7 +2,7 @@ import pandas as pd
 from load_mongodb import retrieve_mongo_connection
 
 # Search result term
-search_terms = ['samsung_galaxy_s22', 'iphone']
+search_terms = ['samsung', 'iphone']
 
 
 def common_data_model(search_terms: list):
@@ -37,4 +37,4 @@ def common_data_model(search_terms: list):
 
 result = common_data_model(search_terms)
 
-print(result.keys())
+print(result.head())

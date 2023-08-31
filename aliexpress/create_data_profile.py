@@ -16,7 +16,7 @@ print(df.head())
 report = ProfileReport(df, dark_mode=True)
 
 # Report path
-report_path = getcwd() + "/docs/frameworks/profiling/profiles"
+report_path = getcwd() + "/aliexpress"
 
 # Save as HTML
 report.to_file(f'{report_path}/aliexpress_results_summary.html')

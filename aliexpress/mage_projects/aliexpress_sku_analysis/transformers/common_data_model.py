@@ -1,13 +1,16 @@
 import pandas as pd
 from pymongo import MongoClient
+from json_read import json_reader
 
 if 'transformer' not in globals():
     from mage_ai.data_preparation.decorators import transformer
 if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
 
+uri = json_reader("URI")
+
 # Retrieve Mongo Collection
-def retrieve_mongo_connection(search_term: str, uri='104.225.217.176:8363'):
+def retrieve_mongo_connection(search_term: str, uri):
     """
     Inputs:
         - search_term (string): Search term for the query of API
