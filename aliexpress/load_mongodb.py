@@ -2,6 +2,11 @@ from extract_aliexpress_data import retrieve_item_pages
 from pymongo import MongoClient
 from datetime import datetime
 from json_read import json_reader
+import csv 
+import pandas
+
+df = pandas.read_csv(r"C:\Users\Ali\backloggd_games.csv") 
+print(df)
 
 # Connection to MongoDB
 def retrieve_mongo_connection(search_term: str):

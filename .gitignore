@@ -8,3 +8,5 @@ metadata.yaml
 stratchpad
 __pycache__
 create_data_profile.py
+.gitignore
+mage_data

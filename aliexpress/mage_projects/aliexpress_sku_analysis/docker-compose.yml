@@ -16,7 +16,7 @@ services:
     container_name: sku_ali_mongodb
     image: mongo
     ports:
-      - '8363:27017'
+      - ''
     restart: on-failure
 
   # MageAI Server
@@ -24,7 +24,7 @@ services:
     container_name: sku_ali_mageai
     image: mageai/mageai
     ports:
-      - '8371:6789'
+      - ''
     environment:
       - REQUIRE_USER_AUTHENTICATION=1
     volumes:
