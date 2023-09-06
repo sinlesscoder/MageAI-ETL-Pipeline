@@ -6,7 +6,7 @@ services:
     container_name: sku_ali_postgresql
     image: postgres:latest
     ports:
-      - '8362:5432'
+      - ''
     environment:
       - POSTGRES_PASSWORD=12345!
     restart: on-failure
