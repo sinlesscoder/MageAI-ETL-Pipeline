@@ -36,8 +36,4 @@ This portfolio project serves as a foundation for more advanced features and imp
 
 - Creating a web-based dashboard to visualize the extracted and transformed data.
 
-## Contact Information
-
-If you have any questions, suggestions, or would like to discuss collaboration, feel free to contact me at your.email@example.com.
-
 Thank you for checking out my AliExpress Data Extraction and ETL Pipeline project! Your feedback is highly appreciated.
